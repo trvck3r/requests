@@ -21,6 +21,16 @@ class request_listController extends Controller
         return view ('request_list');
     }
 
+    public function search(Request $request)
+    {
+       $s=$request->s;
+       
+       $users=request_list_view::where('fio', 'LIKE',"%{$s}%")->orderBy('fio');
+    //    dd($users);
+       return view ('request_list', compact('users'));
+    }
+
+
     /**
      * Create a new controller instance.
      *

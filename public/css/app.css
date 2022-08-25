@@ -10903,3 +10903,19 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+/*Чекбокс в комбобокс*/
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}

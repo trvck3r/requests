@@ -47,8 +47,16 @@ Route::get('/request_list', [App\Http\Controllers\request_listController::class,
 
 Route::get('/request_list', [App\Http\Controllers\RequestStatusController::class, 'userId'])->name('request_list');
 
-Route::get('/request_list', [App\Http\Controllers\request_listController::class, 'pag'])->name('request_list_pag');
+// Route::get('/request_list', [App\Http\Controllers\request_listController::class, 'pag'])->name('request_list_pag');
 
-Route::get('/request_edit/{id_request}', [App\Http\Controllers\RequestStatusController::class, 'u'])->name('request_edit.userId');
+// Route::get('/request_edit/{id_request}', [App\Http\Controllers\RequestStatusController::class, 'u'])->name('request_edit.userId');
 
 Route::post('/request_edit/{id_request}', [App\Http\Controllers\RequestStatusController::class, 'store'])->name('request_edit.userId_');
+
+Route::get('/search', [App\Http\Controllers\request_listController::class, 'search'])->name('search');
+
+Route::get('/request_list', [App\Http\Controllers\UserController::class, 'index'])->name('index');
+
+// Route::get('/request_list/{id_request}', [App\Http\Controllers\RequestStatusController::class, 'u'])->name('request_edit.userId');
+
+

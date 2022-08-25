@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Laravel\Scout\Searchable;
+use Laravel\Scout\Attributes\SearchUsingPrefix;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -41,4 +43,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // #[SearchUsingPrefix(['fio'])]
+    // public function toSearchableArray()
+    // {
+    //     return [
+    //         'id_request' => $this->id_request,
+    //         'fio' => $this->fio,
+    //         'stud_group' => $this->stud_group,
+    //         'name' => $this->name,
+    //         'type_name' => $this->type_name,
+    //         'comment' => $this->comment
+    //     ];
+    // }
 }

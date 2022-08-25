@@ -46,8 +46,7 @@ class RequestStatusController extends Controller
     { 
         $per = request_list::query()
         ->find($id); 
-
-        return view ('request_edit', compact('per'));
+        return view ('request_list', compact('per'));
        
     }
 
